@@ -1,0 +1,67 @@
+sttyl(1)
+
+NAME
+	sttyl - A simple implementation of stty; change and print terminal line settings
+
+SYNOPSIS
+	./sttyl [SETTING]...
+
+DESCRIPTION
+	Print or change terminal line settings.
+
+	Special characters:
+
+		Note - input for special character assumes a control character. There is no need to use the ^ character on input.
+
+		erase CHAR
+			^CHAR will erase the last character typed
+		intr CHAR
+			^CHAR will send an interrupt signal
+		kill CHAR
+			^CHAR will erase the current line
+		quit CHAR
+			^CHAR will send a quit signal
+	
+	Special settings:
+
+		min N
+			with -icanon, set N characters minimum for a completed read
+		time N
+			with -icanon, set read timeout of N tenths of a second
+
+	Control settings:
+
+		[-]crtscts
+			enable RTC/CTS handshaking
+
+	Input settings:
+
+		[-]icrnl
+			translate carriage return to newline
+
+	Output settings:
+
+		[-]olcuc
+			translate lowercase characters to uppercase
+		[-]onlcr
+			translate newline to carraige return-newline
+
+	Local settings:
+
+		[-]echo
+			echo input characters
+		[-]echoe
+			echo erase characters as backspace-space-backspace
+		[-]icanon
+			enable erase, kill, werase, and rprnt special characters
+		[-]isig
+			enable interrupt, quit, and suspend special characters
+
+AUTHOR
+	Written by Colten Sullivent
+	Partially derived from stty(1) by David MacKenzie
+
+LEGAL
+	This manual partially reproduced for educational use from stty(1), Copyright ©2010 Free Software Foundation, Inc.
+
+sttyl(1)
